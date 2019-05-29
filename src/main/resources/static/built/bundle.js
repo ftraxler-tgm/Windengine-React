@@ -24856,10 +24856,28 @@ function (_React$Component) {
       label: 'Windengine ID'
     }, {
       key: 'timestamp',
-      label: 'ParkrechnerID'
+      label: 'Timestamp'
     }, {
       key: 'parkrechnerID',
-      label: 'Title'
+      label: 'Parkrechner ID'
+    }, {
+      key: 'windspeed',
+      label: 'Windspeed'
+    }, {
+      key: 'temperature',
+      label: 'Temperature'
+    }, {
+      key: 'power',
+      label: 'Power'
+    }, {
+      key: 'blindpower',
+      label: 'Blindpower'
+    }, {
+      key: 'rotationspeed',
+      label: 'Rotationspeed'
+    }, {
+      key: 'bladeposition',
+      label: 'Bladeposition'
     }];
     return _this;
   }
@@ -24889,7 +24907,7 @@ function (_React$Component) {
       }))), React.createElement("tbody", null, this.state.windengines.map(function (item, key) {
         return React.createElement("tr", {
           key: key
-        }, React.createElement("td", null, item.windengineID), React.createElement("td", null, item.timestamp), React.createElement("td", null, item.parkrechnerID));
+        }, React.createElement("td", null, item.windengineID), React.createElement("td", null, item.timestamp), React.createElement("td", null, item.parkrechnerID), React.createElement("td", null, item.windspeed, " ", item.unitWindspeed), React.createElement("td", null, item.temperature, " ", item.unitTemperature), React.createElement("td", null, item.power, " ", item.unitPower), React.createElement("td", null, item.blindpower, " ", item.unitBlindpower), React.createElement("td", null, item.rotationspeed, " ", item.unitRotationspeed), React.createElement("td", null, item.bladeposition, " ", item.unitBladeposition));
       })));
     }
   }]);

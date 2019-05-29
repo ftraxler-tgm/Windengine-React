@@ -14,26 +14,12 @@ class App extends React.Component {
             {key: 'windengineID', label: 'Windengine ID'},
             {key: 'timestamp', label: 'Timestamp'},
             {key: 'parkrechnerID', label: 'Parkrechner ID'},
-
             {key: 'windspeed', label: 'Windspeed'},
-            {key: 'unitWindspeed', label: 'unitWindspeed'},
-
             {key: 'temperature', label: 'Temperature'},
-            {key: 'unitTemperature', label: 'unitTemperature'},
-
             {key: 'power', label: 'Power'},
-            {key: 'unitPower', label: 'unitPower'},
-
             {key: 'blindpower', label: 'Blindpower'},
-            {key: 'unitBlindpower', label: 'unitBlindpower'},
-
             {key: 'rotationspeed', label: 'Rotationspeed'},
-            {key: 'unitRotationspeed', label: 'unitRotationspeed'},
-
-
-
             {key: 'bladeposition', label: 'Bladeposition'},
-            {key: 'unitBladeposition', label: 'unitBladeposition'},
 
         ];
     }
@@ -81,9 +67,9 @@ class App extends React.Component {
 
                                 <td>{item.blindpower} {item.unitBlindpower}</td>
 
-                                <td>{item.rotationspeed} </td>
+                                <td>{item.rotationspeed} {item.unitRotationspeed}</td>
 
-                                <td>{item.bladeposition}</td>
+                                <td>{item.bladeposition} {item.unitBladeposition}</td>
                             </tr>
                         )
                     })
