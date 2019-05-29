@@ -24810,6 +24810,9 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24830,8 +24833,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"); // const client = require('./client');
-// end::vars[]
+var ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"); // end::vars[]
 // tag::app[]
 
 
@@ -24840,24 +24842,60 @@ var App =
 function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      windengines: []
+    };
+    _this.headers = [{
+      key: 'windengineID',
+      label: 'Windengine ID'
+    }, {
+      key: 'timestamp',
+      label: 'ParkrechnerID'
+    }, {
+      key: 'parkrechnerID',
+      label: 'Title'
+    }];
+    return _this;
   }
 
   _createClass(App, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      fetch('/api/zentrale').then(function (response) {
+        return response.json();
+      }).then(function (result) {
+        _this2.setState({
+          windengines: result
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return React.createElement("div", {
-        className: "shopping-list"
-      }, React.createElement("h1", null, "Shopping List for ", this.props.name), React.createElement("ul", null, React.createElement("li", null, "Instagram"), React.createElement("li", null, "WhatsApp"), React.createElement("li", null, "Oculus")));
+      return React.createElement("table", {
+        border: 1
+      }, React.createElement("thead", null, React.createElement("tr", null, this.headers.map(function (h) {
+        return React.createElement("th", {
+          key: h.key
+        }, h.label);
+      }))), React.createElement("tbody", null, this.state.windengines.map(function (item, key) {
+        return React.createElement("tr", {
+          key: key
+        }, React.createElement("td", null, item.windengineID), React.createElement("td", null, item.timestamp), React.createElement("td", null, item.parkrechnerID));
+      })));
     }
   }]);
 
   return App;
-}(React.Component); // end::app[]
-
+}(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('react')); // end::render[]
 
