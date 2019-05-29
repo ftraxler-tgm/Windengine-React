@@ -6,3 +6,4 @@ Die detaillierte [Aufgabenstellung](TASK.md) beschreibt die notwendigen Schritte
 ## Implementierung
 
 ## Quellen
+* [ReactJS REST API GET Example](https://www.roytuts.com/react-rest-api-get-example/)
