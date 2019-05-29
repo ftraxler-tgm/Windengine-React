@@ -16,7 +16,7 @@ public class Rest {
     @Autowired
     WindengineRepository repository;
 
-    @RequestMapping(method= RequestMethod.GET, value="/zentrale")
+    @RequestMapping(method= RequestMethod.GET, value="/api/zentrale")
     public Iterable<Windengine> wind(){
         return repository.findAll();
     }
