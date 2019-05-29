@@ -24899,7 +24899,7 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       return React.createElement("table", {
-        border: 1
+        className: "table table-striped"
       }, React.createElement("thead", null, React.createElement("tr", null, this.headers.map(function (h) {
         return React.createElement("th", {
           key: h.key

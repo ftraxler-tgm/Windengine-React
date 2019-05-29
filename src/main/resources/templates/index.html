@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head lang="en">
-    <meta charset="UTF-8"/>
-    <title>ReactJS + Spring Data REST</title>
-    <link rel="stylesheet" href="/main.css" />
-</head>
+<head th:replace="header :: copy"></head>
 <body>
 
-    <div id="react" align="center"></div>
+
+
+
+    <div id="react"></div>
 
     <script src="built/bundle.js"></script>
 
+
+	<div th:replace="footer :: copy"></div>
 </body>
 </html>

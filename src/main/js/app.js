@@ -37,7 +37,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <table border={1}>
+            <table className="table table-striped">
                 <thead>
                 <tr>
                     {

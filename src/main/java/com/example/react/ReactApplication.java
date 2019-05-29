@@ -36,11 +36,16 @@ public class ReactApplication {
 
 
             // fetch all customers
-            log.info("Customers found with findAll():");
+            log.info("Windengines found with findAll():");
             log.info("-------------------------------");
-            for (Windengine customer : repository.findAll()) {
-                log.info(customer.toString());
+            int number = 0;
+		
+
+	    for (Windengine customer : repository.findAll()) {
+                //log.info(customer.toString());
+		number++;
             }
+	    log.info(number+ " Windengines found");
             log.info("");
 
 
