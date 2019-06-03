@@ -39,10 +39,10 @@ gefiltert werden.
 ## Bewertung
 Gruppengrösse: 1 Person
 ### Grundanforderungen **überwiegend erfüllt**
-- [ ] Durchlesen des Tutorials "React.js and Spring Data REST"
-- [ ] Implementieren des Beispiels "Employee Overview"
-- [ ] Einzelne Schritte und Komponenten des Beispiels verstehen und im Protokoll dokumentieren
-- [ ] Adaptierung des React Beispiels zur Darstellung der Winddaten aus Übung GK8.3.1 Middleware Engineering "Document Oriented Middleware using MongoDB"
+- [x] Durchlesen des Tutorials "React.js and Spring Data REST"
+- [x] Implementieren des Beispiels "Employee Overview"
+- [x] Einzelne Schritte und Komponenten des Beispiels verstehen und im Protokoll dokumentieren
+- [x] Adaptierung des React Beispiels zur Darstellung der Winddaten aus Übung GK8.3.1 Middleware Engineering "Document Oriented Middleware using MongoDB"
 - [ ] Beantwortung der Fragestellungen
 ### Grundanforderungen **zur Gänze erfüllt**
 - [ ] Implementieren eines Filters in Spring React zur Abfrage der Daten aus dem NoSQL Repository
