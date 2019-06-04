@@ -139,7 +139,85 @@ module.exports = {
 Die Entwicklung für das Frontend findet nun nur im app.js File statt.
 
 ```js
+const React = require('react');
+const ReactDOM = require('react-dom');
 
+class App extends React.Component
+```
+
+Wir müssen eine Liste für die windengines erstellen und einen Header also die erste Zeile der Tabelle das ganze machen wir im constructor.
+
+```js
+constructor(props) {
+    super(props)//Ruft den constructor des React.Components auf
+    this.state = {windengines:[]}
+    this.headers = [
+        {key: 'windeingineID', lable :'Windengine ID'}
+        .....
+    ]
+}
+```
+
+Um die Json Daten zu bekommen die danach weiter verarbeitet werden sollen holt man sich diese meistens von einer REST-Schnittstelle geholt und in unser Fall in die windengines Liste gespeichert die wir zuvor im Konstruktor initialisiert haben.
+
+```js
+componentDidMount() {
+        fetch('/api/zentrale')
+            .then(response => {
+                return response.json();
+            }).then(result => {
+            this.setState({
+                windengines: result
+            });
+        });
+    }
+
+```
+
+
+
+Die eigentliche Front-End Entwicklung findet in der render Function statt das ist nämliche dies Funktion welche etwas auf den Frontend zurückgibt.
+
+Um die Daten aus der Liste nun in eine Tabelle verwenden wir die map-Funktion
+
+```js
+<thead>
+<tr>
+    {
+    this.headers.map(function (h) {
+        return (
+            <th key={h.key}>{h.label}</th>
+			)
+	})
+	}
+</tr>
+</thead>
+
+```
+
+```js
+<tbody>
+                {
+                    this.state.windengines.map(function (item, key) {
+                        return (
+                            <tr key={key}>
+                                <td>{item.windengineID}</td>
+								.....
+                            </tr>
+                        )
+                    })
+                }
+ </tbody>
+
+```
+
+Um das ganzen nun zu displayen fügt man außerhalb der Klasse noch folgendes hinzu.
+
+```js
+ReactDOM.render(
+    <App />,
+    document.getElementById('react')
+)
 ```
 
 
